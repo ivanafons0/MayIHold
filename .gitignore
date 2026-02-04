@@ -1,3 +1,12 @@
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.svg
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
