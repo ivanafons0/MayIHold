@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 def plot_price_with_sma(data, name="Activo", save_path=None):
     """Gráfica de precio con medias móviles"""
@@ -180,11 +181,15 @@ def plot_drawdown(data, name="Activo", save_path=None):
 
 def generate_all_metrics(data, name="Activo", prefix=""):
     """Genera todas las gráficas de métricas"""
+    # Crear carpeta metrics si no existe
+    metrics_dir = os.path.join(os.path.dirname(__file__), '..', 'metrics')
+    os.makedirs(metrics_dir, exist_ok=True)
+    
     prefix = prefix or name.lower().replace(" ", "_")
     
-    plot_price_with_sma(data, name, f'{prefix}_sma.png')
-    plot_rsi(data, name, f'{prefix}_rsi.png')
-    plot_returns_comparison(data, name, f'{prefix}_returns.png')
-    plot_drawdown(data, name, f'{prefix}_drawdown.png')
+    plot_price_with_sma(data, name, os.path.join(metrics_dir, f'{prefix}_sma.png'))
+    plot_rsi(data, name, os.path.join(metrics_dir, f'{prefix}_rsi.png'))
+    plot_returns_comparison(data, name, os.path.join(metrics_dir, f'{prefix}_returns.png'))
+    plot_drawdown(data, name, os.path.join(metrics_dir, f'{prefix}_drawdown.png'))
     
-    print(f"\n✅ Todas las métricas visuales generadas para {name}")
+    print(f"\n✅ Todas las métricas visuales generadas para {name} en carpeta 'metrics/'")
