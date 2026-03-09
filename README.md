@@ -80,6 +80,7 @@ MayIHold/
 │   └── risk.py        # Cálculo de riesgos
 ├── metrics/           # Gráficas generadas (PNG)
 ├── quantlab/          # Entorno virtual
+├── requirements.txt   # Dependencias
 └── README.md
 ```
 
