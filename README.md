@@ -98,6 +98,4 @@ El programa genera:
   - `{ticker}_returns.png` - Rendimientos por período
   - `{ticker}_drawdown.png` - Drawdown histórico
 
-## Licencia
 
-MIT
